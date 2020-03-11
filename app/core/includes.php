@@ -8,17 +8,17 @@ include('Router.php');
 
 function __autoload($className){
 
-    if(file_exists(ROOT . DS . 'app/core' . DS . $className . 'php')){
-        require_once(ROOT . DS . 'app/core' . DS . $className . 'php');
+    if(file_exists(ROOT . DS . $className . '.php')){
+        require_once(ROOT . DS . $className . '.php');
     }
-    elseif(file_exists(ROOT . DS . 'app/model' . DS . $className . 'php')){
-        require_once(ROOT . DS . 'app/model' . DS . $className . 'php');
+    elseif(file_exists(ROOT . DS . '../model' . DS . $className . '.php')){
+        require_once(ROOT . DS . '../model' . DS . $className . '.php');
     }
-    elseif(file_exists(ROOT . DS . 'app/view/includes'. DS . $className . 'php')){
-        require_once(ROOT . DS . 'app/view/includes'. DS . $className . 'php');
+    elseif(file_exists(ROOT . DS . '../view/includes'. DS . $className . '.php')){
+        require_once(ROOT . DS . '../view/includes'. DS . $className . '.php');
     }
-    elseif(file_exists(ROOT . DS . 'app/controller' . DS . $className . 'php')){
-        require_once(ROOT . DS . 'app/controller' . DS . $className . 'php');
+    elseif(file_exists(ROOT . DS . '../controller' . DS . $className . '.php')){
+        require_once(ROOT . DS . '../controller' . DS . $className . '.php');
     }else{
         echo 'cannot find Class';
     }

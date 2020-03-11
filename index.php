@@ -6,6 +6,8 @@ if(isset($_SERVER['PATH_INFO'])){
     Router::setURL($url);
 }else{
     $url = [];
+    Router::setURL($url);
 }
 
 Router::getURL();
+Link::addLink();
